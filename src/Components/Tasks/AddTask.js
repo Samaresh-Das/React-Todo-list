@@ -1,6 +1,6 @@
 import classes from "./AddTask.module.css";
 import Card from "../UI/Card";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import Button from "../UI/Button";
 import ErrorModal from "./ErrorModal";
 
@@ -36,7 +36,7 @@ const AddTask = (props) => {
   }
 
   return (
-    <div>
+    <Fragment>
       {error && <ErrorModal title={error.title} message={error.message} onDismiss={errorHandler} />}
       <Card className={classes.input}>
         <form onSubmit={addTaskHandler}>
@@ -57,7 +57,7 @@ const AddTask = (props) => {
         <Button type="submit">Add Task</Button>
         </form>
       </Card>
-      </div>
+      </Fragment>
   );
 };
 
